@@ -1,11 +1,10 @@
 #![no_std]
 #![no_main]
 #![feature(core_intrinsics)]
-#![feature(const_raw_ptr_deref)]
+#![allow(unused_unsafe)]
 #![allow(non_snake_case)] // suppress a trivial warning
 #![allow(non_camel_case_types)]
 #![allow(non_upper_case_globals)]
-#![allow(unused)]
 use core::intrinsics::{volatile_store, volatile_load};
 
 mod stm32;
@@ -20,7 +19,7 @@ pub fn ms_wait(ms: u16) {
     st!(SysTick.VAL, 0);
     bset!(SysTick.CTRL, 0);
     for _ in 0..ms {
-        while( bitIsClr!(SysTick.CTRL, 16) ){}
+        while bitIsClr!(SysTick.CTRL, 16) {}
     }
     bclr!(SysTick.CTRL, 0);
 }

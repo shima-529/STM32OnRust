@@ -1,13 +1,3 @@
-#![no_std]
-#![no_main]
-#![feature(core_intrinsics)]
-#![feature(const_raw_ptr_deref)]
-#![feature(linkage)]
-#![allow(non_snake_case)] // suppress a trivial warning
-#![allow(non_camel_case_types)]
-#![allow(non_upper_case_globals)]
-#![allow(unused)]
-
 use crate::startup::Reset_Handler;
 extern "C" {
 #[no_mangle]

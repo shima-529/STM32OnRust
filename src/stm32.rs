@@ -1,5 +1,3 @@
-use core::intrinsics::{volatile_store, volatile_load};
-
 pub struct st_rcc {
     pub CR: u32,
     pub CFGR: u32,
