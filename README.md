@@ -21,5 +21,5 @@ $ make # build the elf binary
 $ make flash # flash by SWD debugging
 ```
 
-# LISENCE
+# LICENSE
 MIT
